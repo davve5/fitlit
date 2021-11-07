@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import BottomProgress from '@/components/BottomProgress/BottomProgress';
 import Layout from '@/components/Layouts/Layout';
 import MealsList from '@/components/MealsList/MealsList';
-import Progress from '@/components/Progress/Progress';
 
 export type Macronutrient = {
   type: 'kcal' | 'proteins' | 'fats' | 'carbs';
@@ -126,18 +126,7 @@ const Components: React.FC = () => {
       <div className='w-full max-w-md px-2 py-16 sm:px-0'>
         <MealsList categories={categories} />
       </div>
-      <section
-        className={clsx(
-          'fixed bottom-0 left-0 w-full bg-gray-100 p-2 space-y-2'
-        )}
-      >
-        <Progress color='kcal' current={0} max={3000} />
-        <div className='grid grid-cols-3 gap-3'>
-          <Progress color='proteins' current={123} max={321} />
-          <Progress color='fats' current={152} max={321} />
-          <Progress color='carbs' current={32} max={123} />
-        </div>
-      </section>
+      <BottomProgress />
     </Layout>
   );
 };
