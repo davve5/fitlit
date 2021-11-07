@@ -12,7 +12,7 @@ const MealsList: React.FC<{
   categories: typeof categories;
 }> = ({ categories }) => (
   <Tab.Group>
-    <Tab.List className='flex p-1 space-x-1 bg-accent-900/20 rounded-xl'>
+    <Tab.List className='flex p-1 space-x-1 bg-accent-200 rounded-xl'>
       {Object.keys(categories).map((category) => (
         <Tab
           key={category}
@@ -22,7 +22,7 @@ const MealsList: React.FC<{
               'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-accent-400 ring-white ring-opacity-60',
               selected
                 ? 'bg-white'
-                : 'text-accent-100 hover:bg-white/[0.12] hover:text-white'
+                : 'ext-accent-100 hover:bg-white/[0.12] hover:text-white'
             )
           }
         >
