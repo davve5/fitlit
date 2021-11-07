@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Layout from '@/components/Layouts/Layout';
-import MealsList from '@/components/MealsList/MealsList';
-import Seo from '@/components/Seo';
 import Header from '@/components/Layouts/Header';
+import Layout from '@/components/Layouts/Layout';
+import Seo from '@/components/Seo';
 
 const HomePage = () => {
   return (
@@ -11,15 +10,10 @@ const HomePage = () => {
       <Seo title='Home' />
       <Header />
 
-      <main className='flex flex-col lg:flex-row bg-gray-50'>
-        <MealsList />
-        <MealsList />
-        <MealsList />
-        <MealsList />
-      </main>
+      <main className='flex flex-col lg:flex-row bg-gray-50'>wadawd</main>
     </Layout>
   );
-}
+};
 
 export default HomePage;
 

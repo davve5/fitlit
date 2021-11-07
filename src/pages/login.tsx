@@ -2,13 +2,11 @@ import { Formik } from 'formik';
 import React from 'react';
 
 import Button from '@/components/Buttons/Button';
-import Checkbox from '@/components/Form/Checkbox';
-import Input from '@/components/Form/Input';
+import CheckboxField from '@/components/Form/CheckboxField';
+import InputField from '@/components/Form/InputField';
 import Layout from '@/components/Layouts/Layout';
 import Link from '@/components/Links/Link';
 import Seo from '@/components/Seo';
-
-interface LoginPageProps {}
 
 const validate = (values: any) => {
   const errors = {
@@ -33,7 +31,7 @@ const onSubmit = (values: any, actions: any) => {
   }, 1000);
 };
 
-const LoginPage: React.FC<LoginPageProps> = ({}) => {
+const LoginPage: React.FC<{}> = () => {
   return (
     <Layout>
       <Seo title='Login' />
@@ -71,26 +69,26 @@ const LoginPage: React.FC<LoginPageProps> = ({}) => {
               className='mt-12 space-y-10 max-w-screen-md'
               onSubmit={handleSubmit}
             >
-              <Input
+              <InputField
                 id='login'
                 name='login'
                 type='text'
                 label='Email	address'
                 placeholder='john@doe.com'
                 onChange={handleChange}
-                handleBlur={handleBlur}
+                onBlur={handleBlur}
                 value={values.login}
               />
-              <Input
+              <InputField
                 id='password'
                 name='password'
                 type='password'
                 label='Password'
                 placeholder='Password'
-                handleBlur={handleBlur}
+                onBlur={handleBlur}
                 onChange={handleChange}
               />
-              <Checkbox id='terms-and-privacy' name='terms-and-privacy'>
+              <CheckboxField id='terms-and-privacy' name='terms-and-privacy'>
                 I agree to the
                 <Link href='#Terms'>Terms</Link>
                 and
@@ -98,7 +96,7 @@ const LoginPage: React.FC<LoginPageProps> = ({}) => {
                 <span>
                   {isValid} | {dirty} | {isSubmitting}
                 </span>
-              </Checkbox>
+              </CheckboxField>
               <Button
                 type='submit'
                 disabled={!(isValid && dirty)}

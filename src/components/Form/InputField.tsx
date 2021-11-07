@@ -1,20 +1,20 @@
 import clsx from 'clsx';
-import { FieldAttributes, useField } from 'formik';
+import { useField } from 'formik';
 import React from 'react';
 
-import Error from '@/components/Form/Error';
+import InputErrorMsg from '@/components/Form/InputErrorMsg';
 
-interface InputProps {
-  label: string;
-  handleBlur: () => void;
-}
-
-const Input: React.FC<FieldAttributes<InputProps>> = ({
-  id,
-  label,
-  className,
-  ...props
-}) => {
+const InputField: React.FC<
+  React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > & {
+    name: string;
+    label: string;
+    id: string;
+    type: 'text' | 'password';
+  }
+> = ({ id, label, className, ...props }) => {
   const [field, meta] = useField(props);
 
   return (
@@ -32,10 +32,10 @@ const Input: React.FC<FieldAttributes<InputProps>> = ({
           {...field}
           {...props}
         />
-        <Error error={meta.error} touched={meta.touched} />
+        <InputErrorMsg error={meta.error} touched={meta.touched} />
       </div>
     </div>
   );
 };
 
-export default Input;
+export default InputField;
