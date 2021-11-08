@@ -12,10 +12,12 @@ const classes = {
     xl: 'text-base px-6 py-3.5 my-3.5',
   },
   variant: {
-    primary: 'bg-accent-500 hover:bg-accent-400 text-white focus:ring-accent-500',
-    secondary: 'bg-gray-200 hover:bg-gray-800 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 text-gray-900 hover:text-white',
-    danger: 'bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white'
-  }
+    primary:
+      'bg-accent-500 hover:bg-accent-400 text-white focus:ring-accent-500',
+    secondary: 'bg-white hover:bg-gray-50 text-gray-500 focus:ring-gray-500',
+    danger:
+      'bg-red-500 hover:bg-red-800 focus:ring-2 focus:ring-red-500 focus:ring-opacity-50 text-white',
+  },
 } as const;
 
 type ButtonProps = {
@@ -56,20 +58,16 @@ const Button = ({
     >
       {hasIcon && (
         <span
-          className={clsx(
-            {
-              'mr-2': hasChildren,
-            }
-          )}
+          className={clsx({
+            'mr-2': hasChildren,
+          })}
         >
           {icon}
         </span>
       )}
-      {hasChildren && (
-        <span>{children}</span>
-      )}
+      {hasChildren && <span>{children}</span>}
     </button>
   );
-}
+};
 
 export default Button;

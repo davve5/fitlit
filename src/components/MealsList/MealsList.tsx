@@ -42,11 +42,11 @@ const MealsList: React.FC<{
               <ul className='space-y-4 rounded-lg'>
                 {meals.map(({ id, label, quantity, unit, macronutrients }) => (
                   <MealItem
+                    key={id}
                     label={label}
                     quantity={quantity}
                     unit={unit}
                     macronutrients={macronutrients}
-                    key={id}
                   />
                 ))}
               </ul>
