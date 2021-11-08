@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { BiTrash } from 'react-icons/bi';
 
 import IconButton from '@/components/Buttons/IconButton';
 import Macronutrients from '@/components/Macronutrients/Macronutrients';
 import Modal from '@/components/Modal/Modal';
 
+import TrashIcon from '@/icons/TrashIcon';
 import { Macronutrient } from '@/pages/components';
 
 const MealItem: React.FC<{
@@ -30,7 +30,7 @@ const MealItem: React.FC<{
             </span>
           </div>
           <IconButton>
-            <BiTrash />
+            <TrashIcon />
           </IconButton>
         </header>
         <div className='flex items-center mb-2'>

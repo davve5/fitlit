@@ -56,7 +56,7 @@ const Progress: React.FC<{
       <span className={clsx('flex h-3.5 md:h-4 rounded relative', empty)}>
         <span
           style={{
-            width: `${(current / max) * 100}%`,
+            width: `${progress}%`,
           }}
           className={clsx('rounded', filled)}
         />
