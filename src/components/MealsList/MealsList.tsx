@@ -11,8 +11,11 @@ import { categories } from '@/pages/components';
 const MealsList: React.FC<{
   categories: typeof categories;
 }> = ({ categories }) => (
-  <Tab.Group>
-    <Tab.List className='flex p-1 space-x-1 bg-accent-200 rounded-xl'>
+  <Tab.Group
+    as='div'
+    className='flex flex-col h-full justify-center max-w-md m-2'
+  >
+    <Tab.List className='flex space-x-1 bg-accent-200 rounded-xl'>
       {Object.keys(categories).map((category) => (
         <Tab
           key={category}
@@ -30,20 +33,25 @@ const MealsList: React.FC<{
         </Tab>
       ))}
     </Tab.List>
-    <Tab.Panels className='mt-2'>
+    <Tab.Panels className='flex mt-2 h-full'>
       {Object.values(categories).map((meals, idx) => (
-        <Tab.Panel key={idx}>
+        <Tab.Panel key={idx} className='flex flex-col w-full'>
           <Button variant='secondary' className='w-full' icon={<FiPlus />} />
-          <ul className='space-y-4 rounded-lg'>
-            {meals.map(({ id, label, quantity, macronutrients }) => (
-              <MealItem
-                label={label}
-                quantity={quantity}
-                macronutrients={macronutrients}
-                key={id}
-              />
-            ))}
-          </ul>
+          <div className='flex flex-col flex-grow relative'>
+            <div className='absolute top-0 left-0 right-0 bottom-0 overflow-y-auto'>
+              <ul className='space-y-4 rounded-lg'>
+                {meals.map(({ id, label, quantity, unit, macronutrients }) => (
+                  <MealItem
+                    label={label}
+                    quantity={quantity}
+                    unit={unit}
+                    macronutrients={macronutrients}
+                    key={id}
+                  />
+                ))}
+              </ul>
+            </div>
+          </div>
         </Tab.Panel>
       ))}
     </Tab.Panels>

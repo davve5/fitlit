@@ -26,6 +26,7 @@ export const categories = {
     {
       id: 1,
       label: 'Chips',
+      unit: 'g',
       quantity: 1,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 435 },
@@ -37,6 +38,7 @@ export const categories = {
     {
       id: 2,
       label: 'Pancakes',
+      unit: 'g',
       quantity: 3,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 543 },
@@ -50,6 +52,7 @@ export const categories = {
     {
       id: 1,
       label: 'Coffe',
+      unit: 'ml',
       quantity: 1,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 13 },
@@ -61,6 +64,7 @@ export const categories = {
     {
       id: 2,
       label: 'Sandwich',
+      unit: 'g',
       quantity: 3,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 658 },
@@ -74,6 +78,7 @@ export const categories = {
     {
       id: 1,
       label: 'Soup',
+      unit: 'ml',
       quantity: 1,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 253 },
@@ -85,6 +90,7 @@ export const categories = {
     {
       id: 2,
       label: 'Chicken',
+      unit: 'g',
       quantity: 1,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 254 },
@@ -98,6 +104,7 @@ export const categories = {
     {
       id: 1,
       label: 'Sandwich',
+      unit: 'g',
       quantity: 2,
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 321 },
@@ -110,6 +117,55 @@ export const categories = {
       id: 2,
       label: 'Milk',
       quantity: 1,
+      unit: 'ml',
+      macronutrients: [
+        { type: 'kcal', unit: 'kcal', quantity: 125 },
+        { type: 'proteins', unit: 'g', quantity: 32 },
+        { type: 'fats', unit: 'g', quantity: 12 },
+        { type: 'carbs', unit: 'g', quantity: 21 },
+      ],
+    },
+    {
+      id: 3,
+      label: 'Sandwich',
+      quantity: 2,
+      unit: 'g',
+      macronutrients: [
+        { type: 'kcal', unit: 'kcal', quantity: 321 },
+        { type: 'proteins', unit: 'g', quantity: 4 },
+        { type: 'fats', unit: 'g', quantity: 32.3 },
+        { type: 'carbs', unit: 'g', quantity: 23 },
+      ],
+    },
+    {
+      id: 4,
+      label: 'Milk',
+      quantity: 1,
+      unit: 'ml',
+      macronutrients: [
+        { type: 'kcal', unit: 'kcal', quantity: 125 },
+        { type: 'proteins', unit: 'g', quantity: 32 },
+        { type: 'fats', unit: 'g', quantity: 12 },
+        { type: 'carbs', unit: 'g', quantity: 21 },
+      ],
+    },
+    {
+      id: 5,
+      label: 'Sandwich',
+      quantity: 2,
+      unit: 'g',
+      macronutrients: [
+        { type: 'kcal', unit: 'kcal', quantity: 321 },
+        { type: 'proteins', unit: 'g', quantity: 4 },
+        { type: 'fats', unit: 'g', quantity: 32.3 },
+        { type: 'carbs', unit: 'g', quantity: 23 },
+      ],
+    },
+    {
+      id: 6,
+      label: 'Milk',
+      quantity: 1,
+      unit: 'ml',
       macronutrients: [
         { type: 'kcal', unit: 'kcal', quantity: 125 },
         { type: 'proteins', unit: 'g', quantity: 32 },
@@ -123,9 +179,7 @@ export const categories = {
 const Components: React.FC = () => {
   return (
     <Layout>
-      <div className='w-full max-w-md px-2 py-16 sm:px-0'>
-        <MealsList categories={categories} />
-      </div>
+      <MealsList categories={categories} />
       <BottomProgress />
     </Layout>
   );

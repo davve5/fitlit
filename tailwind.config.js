@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
 
-const withOpacity  = (variableName) => {
+const withOpacity = (variableName) => {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
       return `rgba(var(${variableName}), ${opacityValue})`;
     }
     return `rgb(var(${variableName}))`;
   };
-}
+};
 
 module.exports = {
   mode: 'jit',
@@ -22,18 +22,15 @@ module.exports = {
       },
       colors: {
         accent: colors.rose,
-        carbs: colors.sky,
+        carbs: colors.pink, // blueGray // pink
         fats: colors.amber,
         kcal: colors.purple,
-        proteins: colors.pink,
+        proteins: colors.sky,
       },
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

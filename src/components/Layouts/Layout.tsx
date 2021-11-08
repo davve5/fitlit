@@ -1,9 +1,18 @@
-import * as React from 'react';
+import clsx from 'clsx';
+import React from 'react';
 
-const Layout = ({ children }: { children: React.ReactNode }) => (
-  <div className='h-screen selection:bg-accent-500 selection:text-white'>
-   {children}
-   </div>
+const Layout: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+}> = ({ children, className }) => (
+  <div
+    className={clsx(
+      'flex flex-col h-screen selection:bg-accent-500 selection:text-white bg-gray-200',
+      className
+    )}
+  >
+    {children}
+  </div>
 );
 
 export default Layout;

@@ -28,25 +28,42 @@ const Progress: React.FC<{
   current: number;
   max: number;
   color: keyof typeof progressColors;
+  label?: string;
   className?: string;
-}> = ({ current, max, color, className }) => {
+}> = ({ current, max, color, label, className }) => {
   const { empty, filled, text } = progressColors[color];
 
+  const percentage = ((current / max) * 100).toFixed(0);
   const progress = Math.max(Math.min(current / max, 1) * 100, 0);
 
   return (
     <div className={className}>
+      {label && (
+        <div
+          className={clsx(
+            'flex items-center justify-between',
+            'font-semibold capitalize text-xs',
+            'px-1',
+            text
+          )}
+        >
+          <span>{label}</span>
+          <span>
+            {current}/{max}
+          </span>
+        </div>
+      )}
       <span className={clsx('flex h-3.5 md:h-4 rounded relative', empty)}>
         <span
           style={{
-            width: `${progress}%`,
+            width: `${(current / max) * 100}%`,
           }}
           className={clsx('rounded', filled)}
         />
         <span
           className={clsx('absolute right-1 top-0 font-semibold text-xs', text)}
         >
-          {current}/{max}
+          {percentage}%
         </span>
       </span>
     </div>
