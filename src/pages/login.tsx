@@ -4,7 +4,7 @@ import React from 'react';
 import Button from '@/components/Buttons/Button';
 import CheckboxField from '@/components/Form/CheckboxField';
 import InputField from '@/components/Form/InputField';
-import Layout from '@/components/Layouts/Layout';
+import Layout from '@/components/Layouts/Layout.server';
 import Link from '@/components/Links/Link';
 import Seo from '@/components/Seo';
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RiAlarmWarningFill } from 'react-icons/ri';
 
-import Layout from '@/components/Layouts/Layout';
+import Layout from '@/components/Layouts/Layout.server';
 import Link from '@/components/Links/Link';
 import Seo from '@/components/Seo';
 
@@ -26,6 +26,6 @@ const NotFoundPage = () => {
       </main>
     </Layout>
   );
-}
+};
 
 export default NotFoundPage;

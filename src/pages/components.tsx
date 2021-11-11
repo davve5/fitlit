@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '@/components/Layouts/Layout';
+import Layout from '@/components/Layouts/Layout.server';
 
 const Components: React.FC = () => {
   return <Layout>hello</Layout>;

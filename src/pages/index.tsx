@@ -2,7 +2,7 @@ import React from 'react';
 
 import BottomProgress from '@/components/BottomProgress/BottomProgress';
 import Header from '@/components/Layouts/Header';
-import Layout from '@/components/Layouts/Layout';
+import Layout from '@/components/Layouts/Layout.server';
 import MealsList from '@/components/MealsList/MealsList';
 import Seo from '@/components/Seo';
 
