@@ -38,7 +38,7 @@ const MealsList: React.FC<{
         <Tab.Panel key={idx} className='flex flex-col w-full'>
           <Button variant='primary' className='w-full' icon={<PlusIcon />} />
           <div className='flex flex-col flex-grow relative mt-2'>
-            <div className='absolute top-0 left-0 right-0 bottom-0 overflow-y-auto'>
+            <div className='absolute top-0 left-0 right-0 bottom-0 overflow-y-auto hide-scrollbar'>
               <ul className='space-y-4 rounded-lg'>
                 {meals.map(({ id, label, quantity, unit, macronutrients }) => (
                   <MealItem

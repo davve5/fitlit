@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { FaRegUser } from 'react-icons/fa'
-import { FiLogIn } from 'react-icons/fi'
-import { BiHomeAlt } from 'react-icons/bi'
-import { CgComponents } from 'react-icons/cg'
+import { BiHomeAlt } from 'react-icons/bi';
+import { CgComponents } from 'react-icons/cg';
+import { FaRegUser } from 'react-icons/fa';
+import { FiLogIn } from 'react-icons/fi';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 
@@ -11,6 +11,7 @@ const links = [
   { href: '/user', label: 'user', icon: <FaRegUser /> },
   { href: '/login', label: 'login', icon: <FiLogIn /> },
   { href: '/components', label: 'components', icon: <CgComponents /> },
+  { href: '/search', label: 'search', icon: <CgComponents /> },
 ];
 
 const Header = () => {
@@ -34,6 +35,6 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
 export default Header;
